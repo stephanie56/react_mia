@@ -20,6 +20,6 @@ Make MIA available for myself. :P
 - message: 'You haven't worked yet. Add a new task to start!'
 
 2. UI
-- <TimeController />
-- <Clock />
-- <TaskField />
+- TimeController
+- Clock
+- TaskField
