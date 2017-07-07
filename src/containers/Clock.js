@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+
 class Clock extends Component {
   render() {
     return(
@@ -15,4 +17,9 @@ class Clock extends Component {
   };
 }
 
-export default Clock;
+const mapStateToProps = (state) => ({
+  currentTask: state.currentTask,
+  timeLeft: state.timeLeft
+});
+
+export default connect(mapStateToProps)(Clock);

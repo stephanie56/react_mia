@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class TaskField extends Component {
   render() {
@@ -14,4 +15,7 @@ class TaskField extends Component {
   };
 }
 
-export default TaskField;
+const mapStateToProps = (state) => ({
+  message: state.message
+});
+export default connect(mapStateToProps)(TaskField);
