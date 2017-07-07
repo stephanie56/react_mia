@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 class TaskField extends Component {
   render() {
     return(
-      <div>TaskField</div>
+      <div>
+        <form>
+          <input type='text'/>
+          <input type='submit' value='Add Task'/>
+        </form>
+        <p>{ this.props.message }</p>
+      </div>
     )
   };
 }

@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <TimeController />
-        <Clock />
-        <TaskField />
+        <Clock currentTask={'Session'} timeLeft={10} />
+        <TaskField message={'You haven\'t worked yet. Add a new task to start!'} />
       </div>
     );
   }
