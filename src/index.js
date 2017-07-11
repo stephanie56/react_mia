@@ -6,14 +6,12 @@ import store from './store';
 
 import App from './App';
 
-export default class AppProvider extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-    )
-  }
-}
+const AppProvider = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+export default AppProvider;
 
 ReactDOM.render(<AppProvider />, document.getElementById('root'));
