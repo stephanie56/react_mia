@@ -8,6 +8,16 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
+    case 'INCREASE_COUNTER':
+      return {
+        ...state,
+        breakDuration: state.breakDuration + 1
+      };
+    case 'DECREASE_COUNTER':
+      return {
+        ...state,
+        breakDuration: state.breakDuration - 1
+      }
     default:
       return state;
   }
