@@ -1,11 +1,13 @@
-export function onCounterIncrease() {
+export function onCounterIncrease(count) {
   return {
-    type: 'INCREASE_COUNTER'
+    type: 'INCREASE_COUNTER',
+    count
   }
 }
 
-export function onCounterDecrease() {
+export function onCounterDecrease(count) {
   return {
-    type: 'DECREASE_COUNTER'
+    type: 'DECREASE_COUNTER',
+    count
   }
 }

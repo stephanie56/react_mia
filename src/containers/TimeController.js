@@ -5,6 +5,15 @@ import { onCounterIncrease, onCounterDecrease } from '../action/actionCreator';
 import Counter from '../components/Counter';
 
 class TimeController extends Component {
+
+  _onIncrement() {
+
+  }
+
+  _onDecrement() {
+
+  }
+
   render() {
     return(
       <div>
@@ -31,8 +40,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchtoProps = (dispatch) => ({
-  onCounterIncrease: () => dispatch(onCounterIncrease()),
-  onCounterDecrease: () => dispatch(onCounterDecrease())
+  onCounterIncrease: (count) => dispatch(onCounterIncrease(count)),
+  onCounterDecrease: (count) => dispatch(onCounterDecrease(count))
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(TimeController);
