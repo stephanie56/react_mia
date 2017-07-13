@@ -7,7 +7,7 @@ class Clock extends Component {
     return(
       <div>
         <div>{ this.props.currentTask  }</div>
-        <div>{ this.props.timeLeft  }</div>
+        <div>{ this.props.workDuration  }</div>
         <div>
           <button>Start</button>
           <button>Stop</button>
@@ -19,7 +19,7 @@ class Clock extends Component {
 
 const mapStateToProps = (state) => ({
   currentTask: state.currentTask,
-  timeLeft: state.timeLeft
+  workDuration: state.workDuration
 });
 
 export default connect(mapStateToProps)(Clock);

@@ -35,4 +35,4 @@ const mapDispatchtoProps = (dispatch) => ({
   onCounterDecrease: () => dispatch(onCounterDecrease())
 })
 
-export default connect(mapStateToProps)(TimeController);
+export default connect(mapStateToProps, mapDispatchtoProps)(TimeController);

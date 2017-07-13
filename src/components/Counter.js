@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { onCounterIncrease, onCounterDecrease } from '../action/actionCreator';
-
 class Counter extends Component {
   render() {
     return(
