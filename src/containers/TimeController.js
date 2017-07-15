@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { onCounterIncrease, onCounterDecrease } from '../action/actionCreator';
+import { onBreakCounterIncrease, onBreakCounterDecrease, onWorkCounterIncrease, onWorkCounterDecrease } from '../action/actionCreator';
 
 import Counter from '../components/Counter';
 
 class TimeController extends Component {
-
-  _onIncrement() {
-
-  }
-
-  _onDecrement() {
-
-  }
 
   render() {
     return(
@@ -20,14 +12,14 @@ class TimeController extends Component {
         <Counter
           name={'Set Break Time'}
           count={ this.props.breakDuration }
-          onIncrement = { this.props.onCounterIncrease }
-          onDecrement = { this.props.onCounterDecrease }
+          onIncrement = { this.props.onBreakCounterIncrease }
+          onDecrement = { this.props.onBreakCounterDecrease }
         />
         <Counter
           name={'Set Work Time'}
           count={ this.props.workDuration }
-          onIncrement = { this.props.onCounterIncrease }
-          onDecrement = { this.props.onCounterDecrease }
+          onIncrement = { this.props.onWorkCounterIncrease }
+          onDecrement = { this.props.onWorkCounterDecrease }
         />
 	    </div>
     )
@@ -40,8 +32,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchtoProps = (dispatch) => ({
-  onCounterIncrease: (count) => dispatch(onCounterIncrease(count)),
-  onCounterDecrease: (count) => dispatch(onCounterDecrease(count))
+  onBreakCounterIncrease: () => dispatch(onBreakCounterIncrease()),
+  onBreakCounterDecrease: () => dispatch(onBreakCounterDecrease()),
+  onWorkCounterIncrease: () => dispatch(onWorkCounterIncrease()),
+  onWorkCounterDecrease: () => dispatch(onWorkCounterDecrease())
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(TimeController);

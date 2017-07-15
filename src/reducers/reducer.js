@@ -7,15 +7,25 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'INCREASE_COUNTER':
+    case 'INCREASE_BREAK_COUNTER':
       return {
         ...state,
         breakDuration: state.breakDuration + 1
       };
-    case 'DECREASE_COUNTER':
+    case 'DECREASE_BREAK_COUNTER':
       return {
         ...state,
-        breakDuration: state.breakDuration - 1
+        breakDuration: state.breakDuration > 0 ? (state.breakDuration - 1) : state.breakDuration
+      }
+    case 'INCREASE_WORK_COUNTER':
+      return {
+        ...state,
+        workDuration: state.workDuration + 1
+      }
+    case 'DECREASE_WORK_COUNTER':
+      return {
+        ...state,
+        workDuration: state.workDuration > 0 ? (state.workDuration - 1) : state.workDuration
       }
     default:
       return state;
