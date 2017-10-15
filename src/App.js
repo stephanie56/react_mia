@@ -6,6 +6,9 @@ import TimeController from './containers/TimeController';
 import Clock from './containers/Clock';
 import TaskField from './containers/TaskField';
 
+// Styles
+import './stylesheets/app.css';
+
 class App extends Component {
   render() {
     return (
