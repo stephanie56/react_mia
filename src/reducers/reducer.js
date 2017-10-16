@@ -1,8 +1,12 @@
 const initialState = {
   breakDuration: 3,
   workDuration: 10,
-  currentTask: "Session",
-  message: "You haven't worked yet. Add a new task to start!",
+  numOfWorkSessions: 0,
+  isOnWork: true,
+  clockInitTime: workDuration,
+  taskList: ['Session', 'yes'],
+  activeTask: this.taskList,
+  message: `You have worked on ${this.activeTask} for ${this.workDuration * this.numOfWorkSessions} minutes`|| "You haven't worked yet. Add a new task to start!"
 }
 
 function reducer(state = initialState, action) {
@@ -28,6 +32,8 @@ function reducer(state = initialState, action) {
         workDuration: state.workDuration > 0 ? (state.workDuration - 1) : state.workDuration
       }
     default:
+      // error tester: cannot use this to intialize state? 
+      console.log(`active task is ${state.clockInitTime}`);
       return state;
   }
 }
