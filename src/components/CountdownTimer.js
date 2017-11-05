@@ -12,17 +12,28 @@ class CountdownTimer extends Component {
     this._addZero = this._addZero.bind(this);
   }
 
+  // fetch setDuration for countdown task
   componentWillMount(){
-    const then = Date.now() + this.props.setDuration * 60 * 1000;
+    // const then = Date.now() + this.props.setDuration * 60 * 1000;
     this.setState({
-      timeToCount: Math.round((then - Date.now()) / 1000)
+      timeToCount: this.props.setDuration * 60
     });
   }
 
+  // start countdown
   componentDidMount(){
-    let timeLeft = this.state.timeToCount;
-    let timer = setInterval(function(){
-      console.log(Math.round((60 - Date.now()) / 1000));
+      const that = this;
+      var timer = setInterval(function(){
+      if(that.state.timeToCount > 0){
+        that.setState({
+          timeToCount: that.state.timeToCount - 1
+        });
+      } else {
+        that.setState({
+          timeToCount: that.props.setDuration * 60
+        });
+        console.log("round 2!");
+      }
     }, 1000);
   }
 

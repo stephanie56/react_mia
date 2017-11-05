@@ -24,6 +24,10 @@ button, input[type="submit"]{
   outline: none;
 }
 
+i.fa, span.fa {
+  margin-right: 6px;
+}
+
 .btn-dark{
   background-color: $dark-blue;
   color: #fff;

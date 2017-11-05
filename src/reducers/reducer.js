@@ -1,6 +1,6 @@
 const initialState = {
   breakDuration: 3,
-  workDuration: 10,
+  workDuration: 1,
   numOfWorkSessions: 0,
   isOnWork: true,
   taskList: [],

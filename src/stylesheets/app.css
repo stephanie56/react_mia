@@ -12,6 +12,9 @@ button, input[type="submit"] {
   border: 1px solid #4c4f56;
   outline: none; }
 
+i.fa, span.fa {
+  margin-right: 6px; }
+
 .btn-dark {
   background-color: #4c4f56;
   color: #fff; }
