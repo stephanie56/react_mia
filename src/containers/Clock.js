@@ -54,7 +54,7 @@ class Clock extends Component {
       <div className="Clock">
         <div className="clock__activetask">{ this.props.activeTask  }</div>
         <CountdownTimer
-          setDuration={1}
+          setDuration={2}
         />
       <div className="clock__btn-group">
           <button className="clock__btn btn-dark">Start</button>
