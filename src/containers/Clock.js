@@ -52,7 +52,7 @@ class Clock extends Component {
     const clockTime = this._convertToDisplayedTime(this.props.workDuration);
     return(
       <div className="Clock">
-        <div className="clock__activetask">{ this.props.currentTask  }</div>
+        <div className="clock__activetask">{ this.props.activeTask  }</div>
         <CountdownTimer
           setDuration={1}
         />
@@ -66,7 +66,7 @@ class Clock extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentTask: state.currentTask,
+  activeTask: state.activeTask,
   workDuration: state.workDuration,
   breakDuration: state.breakDuration,
 });

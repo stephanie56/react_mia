@@ -80,8 +80,16 @@ body {
 }
 
 .Clock {
-  padding: 30px 0;
+  padding: 20px 0;
   .clock{
+    &__activetask {
+      font-size: 2rem;
+      text-align: center;
+      width: 30rem;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
     &__timer{
       font-size: 3rem;
       text-align: center;
@@ -97,7 +105,8 @@ body {
 
     &__btn-group{
       width:$timer-btn-group-width;
-      margin: 30px auto;
+      margin: 10px auto;
+      padding-top: 10px;
       box-sizing: border-box;
     }
 

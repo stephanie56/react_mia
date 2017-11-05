@@ -54,7 +54,13 @@ body {
       border: none; }
 
 .Clock {
-  padding: 30px 0; }
+  padding: 20px 0; }
+  .Clock .clock__activetask {
+    font-size: 2rem;
+    text-align: center;
+    width: 30rem;
+    margin: 0 auto;
+    margin-bottom: 20px; }
   .Clock .clock__timer {
     font-size: 3rem;
     text-align: center;
@@ -68,7 +74,8 @@ body {
     margin: 0 auto; }
   .Clock .clock__btn-group {
     width: 40%;
-    margin: 30px auto;
+    margin: 10px auto;
+    padding-top: 10px;
     box-sizing: border-box; }
   .Clock .clock__btn {
     display: inline-block;

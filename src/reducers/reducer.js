@@ -4,7 +4,7 @@ const initialState = {
   numOfWorkSessions: 0,
   isOnWork: true,
   taskList: [],
-  activeTask: "",
+  activeTask: "Refactor Mia",
   message: "You haven't worked yet. Add a new task to start!"
 }
 
