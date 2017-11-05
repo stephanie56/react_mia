@@ -43,8 +43,30 @@ body {
       padding: 0.2rem 1rem;
       border: none; }
 
-.Clock {
-  background-color: red; }
+.Clock .clock__timer {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 20rem;
+  width: 20rem;
+  height: 20rem;
+  display: block;
+  background-color: inherit;
+  border: 8px solid #4c4f56;
+  border-radius: 100%;
+  margin: 0 auto; }
+
+.Clock .clock__btn-group {
+  width: 40%;
+  margin: 20px auto;
+  box-sizing: border-box; }
+
+.Clock .clock__btn {
+  display: inline-block;
+  margin: 0 2%;
+  width: 46%;
+  padding: 0.8rem 1rem;
+  background-color: #4c4f56;
+  color: #fff; }
 
 .TaskField {
   background-color: yellow; }

@@ -52,13 +52,13 @@ class Clock extends Component {
     const clockTime = this._convertToDisplayedTime(this.props.workDuration);
     return(
       <div className="Clock">
-        <div>{ this.props.currentTask  }</div>
+        <div className="clock__activetask">{ this.props.currentTask  }</div>
         <CountdownTimer
           setDuration={1}
         />
-        <div>
-          <button>Start</button>
-          <button>Stop</button>
+      <div className="clock__btn-group">
+          <button className="clock__btn">Start</button>
+          <button className="clock__btn">Stop</button>
         </div>
       </div>
     )

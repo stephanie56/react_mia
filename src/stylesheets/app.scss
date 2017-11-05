@@ -1,7 +1,12 @@
+// color
 $light-blue: #8fd4d9;
 $main-blue: #4469af;
 $dark-blue: #4c4f56;
 $light-grey: #e6ecf0;
+
+// measures
+$timer-size: 20rem;
+$timer-btn-group-width: 40%;
 
 * {
   margin: 0;
@@ -63,7 +68,36 @@ body {
 }
 
 .Clock {
-  background-color: red;
+
+  .clock{
+    &__timer{
+      font-size: 3rem;
+      text-align: center;
+      line-height: $timer-size;
+      width:$timer-size;
+      height:$timer-size;
+      display: block;
+      background-color: inherit;
+      border: 8px solid $dark-blue;
+      border-radius: 100%;
+      margin: 0 auto;
+    }
+
+    &__btn-group{
+      width:$timer-btn-group-width;
+      margin: 20px auto;
+      box-sizing: border-box;
+    }
+
+    &__btn{
+      display: inline-block;
+      margin: 0 2%;
+      width:46%;
+      padding: 0.8rem 1rem;
+      background-color: $dark-blue;
+      color: #fff;
+    }
+  }
 }
 
 .TaskField {

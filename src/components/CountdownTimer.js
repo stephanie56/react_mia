@@ -25,7 +25,7 @@ class CountdownTimer extends Component {
 
   render() {
     return(
-        <div>
+        <div className="clock__timer">
           <span>{ this.state.timeToCount }</span>
         </div>
     )
