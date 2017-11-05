@@ -8,7 +8,7 @@ class TimeController extends Component {
 
   render() {
     return(
-      <div>
+      <div className="TimeController">
         <Counter
           name={'Set Break Time'}
           count={ this.props.breakDuration }

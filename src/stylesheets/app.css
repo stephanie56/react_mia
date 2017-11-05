@@ -1,2 +1,50 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+button, input[type="button"] {
+  background-color: #fff;
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.2rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  box-sizing: border-box;
+  border: 1px solid #4c4f56;
+  outline: none; }
+
+body {
+  background-color: #8fd4d9;
+  color: #4c4f56;
+  font-family: sans-serif; }
+
 .App {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto; }
+
+.TimeController {
+  padding: 40px 0; }
+  .TimeController .counter {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    text-align: center; }
+    .TimeController .counter__name {
+      font-weight: bold;
+      margin-right: 10px; }
+    .TimeController .counter__number {
+      padding: 0 6px; }
+    .TimeController .counter button {
+      background-color: #fff;
+      color: #4469af;
+      padding: 0.2rem 1rem;
+      border: none; }
+
+.Clock {
+  background-color: red; }
+
+.TaskField {
   background-color: yellow; }

@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class Counter extends Component {
   render() {
     return(
-        <div>
-          <span>{ this.props.name }</span>
+        <div className="counter">
+          <span className="counter__name">{ this.props.name }</span>
           <button
             onClick={() => this.props.onIncrement()}
           >+</button>
-          <span>{ this.props.count }</span>
+        <span className="counter__number">{ this.props.count }</span>
           <button
             onClick={() => this.props.onDecrement()}
           >-</button>

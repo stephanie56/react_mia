@@ -51,7 +51,7 @@ class Clock extends Component {
   render() {
     const clockTime = this._convertToDisplayedTime(this.props.workDuration);
     return(
-      <div>
+      <div className="Clock">
         <div>{ this.props.currentTask  }</div>
         <CountdownTimer
           setDuration={1}

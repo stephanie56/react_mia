@@ -1,5 +1,71 @@
-$main-blue: yellow;
+$light-blue: #8fd4d9;
+$main-blue: #4469af;
+$dark-blue: #4c4f56;
+$light-grey: #e6ecf0;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button, input[type="button"]{
+  background-color: #fff;
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.2rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  box-sizing: border-box;
+  border: 1px solid $dark-blue;
+  outline: none;
+}
+
+body {
+  background-color: $light-blue;
+  color: $dark-blue;
+  font-family: sans-serif;
+}
 
 .App {
-  background-color: $main-blue;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.TimeController {
+  // background-color: $main-blue;
+  padding: 40px 0;
+
+  .counter {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+
+    &__name{
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    &__number{
+      padding: 0 6px;
+    }
+
+    button {
+      background-color: #fff;
+      color: $main-blue;
+      padding: 0.2rem 1rem;
+      border: none;
+    }
+  }
+}
+
+.Clock {
+  background-color: red;
+}
+
+.TaskField {
+  background-color: yellow;
 }
