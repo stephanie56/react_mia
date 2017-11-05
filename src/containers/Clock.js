@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
+import CountdownTimer from '../components/CountdownTimer';
+
 class Clock extends Component {
 
   constructor(props) {
@@ -51,7 +53,9 @@ class Clock extends Component {
     return(
       <div>
         <div>{ this.props.currentTask  }</div>
-        <div>{ clockTime }</div>
+        <CountdownTimer
+          setDuration={1}
+        />
         <div>
           <button>Start</button>
           <button>Stop</button>
