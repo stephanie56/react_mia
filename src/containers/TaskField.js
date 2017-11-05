@@ -9,7 +9,7 @@ class TaskField extends Component {
           <input type='text'/>
           <input type='submit' value='Add Task'/>
         </form>
-        <p>{ this.props.message }</p>
+        <p className="TaskField__message">{ this.props.message }</p>
       </div>
     )
   };

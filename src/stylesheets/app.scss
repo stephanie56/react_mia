@@ -13,7 +13,7 @@ $timer-btn-group-width: 40%;
   padding: 0;
 }
 
-button, input[type="button"]{
+button, input[type="submit"]{
   background-color: #fff;
   padding: 0.4rem 0.8rem;
   margin: 0 0.2rem;
@@ -22,6 +22,18 @@ button, input[type="button"]{
   box-sizing: border-box;
   border: 1px solid $dark-blue;
   outline: none;
+}
+
+.btn-dark{
+  background-color: $dark-blue;
+  color: #fff;
+}
+
+input[type="text"]{
+  outline: none;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  width: 70%;
 }
 
 body {
@@ -68,7 +80,7 @@ body {
 }
 
 .Clock {
-
+  padding: 30px 0;
   .clock{
     &__timer{
       font-size: 3rem;
@@ -85,7 +97,7 @@ body {
 
     &__btn-group{
       width:$timer-btn-group-width;
-      margin: 20px auto;
+      margin: 30px auto;
       box-sizing: border-box;
     }
 
@@ -94,12 +106,24 @@ body {
       margin: 0 2%;
       width:46%;
       padding: 0.8rem 1rem;
-      background-color: $dark-blue;
-      color: #fff;
     }
   }
 }
 
 .TaskField {
-  background-color: yellow;
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+
+  input[type="submit"]{
+    background-color: $dark-blue;
+    color: #fff;
+    margin-left: 6px;
+  }
+
+  &__message {
+    margin: 20px 0;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
 }

@@ -57,8 +57,8 @@ class Clock extends Component {
           setDuration={1}
         />
       <div className="clock__btn-group">
-          <button className="clock__btn">Start</button>
-          <button className="clock__btn">Stop</button>
+          <button className="clock__btn btn-dark">Start</button>
+          <button className="clock__btn btn-dark">Stop</button>
         </div>
       </div>
     )
