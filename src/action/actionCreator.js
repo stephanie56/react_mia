@@ -21,3 +21,15 @@ export function onWorkCounterDecrease() {
     type: 'DECREASE_WORK_COUNTER'
   }
 }
+
+export function startTimer() {
+  return {
+    type: 'START_TIMER'
+  }
+}
+
+export function stopTimer() {
+  return {
+    type: 'STOP_TIMER'
+  }
+}

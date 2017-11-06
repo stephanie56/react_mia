@@ -3,6 +3,7 @@ const initialState = {
   workDuration: 1,
   numOfWorkSessions: 0,
   isOnWork: true,
+  isTimerOn: true,
   taskList: [],
   activeTask: "Refactor Mia",
   message: "You haven't worked yet. Add a new task to start!"
@@ -29,6 +30,16 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         workDuration: state.workDuration > 0 ? (state.workDuration - 1) : state.workDuration
+      }
+    case 'START_TIMER':
+      return {
+        ...state,
+        isTimerOn: true
+      }
+    case 'STOP_TIMER':
+      return {
+        ...state,
+        isTimerOn: false
       }
     default:
       // error tester: cannot use this to intialize state?

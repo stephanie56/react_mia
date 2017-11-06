@@ -5,7 +5,7 @@ class CountdownTimer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      timeToCount: 0
+      timeToCount: 0,
     }
 
     this._formatSeconds = this._formatSeconds.bind(this);
@@ -23,19 +23,28 @@ class CountdownTimer extends Component {
   // start countdown
   componentDidMount(){
       const that = this;
+
       var timer = setInterval(function(){
-      if(that.state.timeToCount > 0){
+      if(that.state.timeToCount > 0 && that.props.isTimerOn){
         that.setState({
           timeToCount: that.state.timeToCount - 1
         });
-      } else {
+      }
+      else if(that.state.timeToCount > 0 && !that.props.isTimerOn){
+        clearInterval(timer);
+        console.log('stopped the timer');
+      }
+      else {
         that.setState({
           timeToCount: that.props.setDuration * 60
         });
         console.log("round 2!");
       }
     }, 1000);
+
   }
+
+
 
   _formatSeconds(totalSeconds){
     const hours = Math.floor(totalSeconds / 3600);
