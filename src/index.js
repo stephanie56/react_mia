@@ -12,6 +12,4 @@ const AppProvider = () => (
   </Provider>
 );
 
-export default AppProvider;
-
 ReactDOM.render(<AppProvider />, document.getElementById('root'));

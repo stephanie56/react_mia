@@ -27,8 +27,8 @@ class TimeController extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  breakDuration: state.breakDuration,
-  workDuration: state.workDuration
+  breakDuration: state.durations.breakTime,
+  workDuration: state.durations.workTime
 });
 
 const mapDispatchtoProps = (dispatch) => ({

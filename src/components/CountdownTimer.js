@@ -5,7 +5,7 @@ class CountdownTimer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      timeToCount: 0,
+      timeToCount: 0
     }
 
     this._formatSeconds = this._formatSeconds.bind(this);
@@ -14,34 +14,34 @@ class CountdownTimer extends Component {
 
   // fetch setDuration for countdown task
   componentWillMount(){
-    // const then = Date.now() + this.props.setDuration * 60 * 1000;
     this.setState({
-      timeToCount: this.props.setDuration * 60
+      timeToCount: this.props.setDuration * 60,
     });
   }
 
   // start countdown
-  componentDidMount(){
+  componentDidUpdate(prevState){
+    if(prevState.timeToCount !== this.state.timeToCount){
       const that = this;
-
       var timer = setInterval(function(){
-      if(that.state.timeToCount > 0 && that.props.isTimerOn){
-        that.setState({
-          timeToCount: that.state.timeToCount - 1
-        });
-      }
-      else if(that.state.timeToCount > 0 && !that.props.isTimerOn){
-        clearInterval(timer);
-        console.log('stopped the timer');
-      }
-      else {
-        that.setState({
-          timeToCount: that.props.setDuration * 60
-        });
-        console.log("round 2!");
-      }
-    }, 1000);
-
+        if(that.state.timeToCount > 0 && that.props.isTimerOn){
+          that.setState({
+            timeToCount: that.state.timeToCount - 1
+          });
+          console.log(that.state.timeToCount);
+        }
+        else if(that.state.timeToCount > 0 && !that.props.isTimerOn){
+          clearInterval(timer);
+          console.log('stopped the timer');
+        }
+        else {
+          that.setState({
+            timeToCount: that.props.setDuration * 60
+          });
+          console.log("round 2!");
+        }
+      }, 1000);
+    }
   }
 
 

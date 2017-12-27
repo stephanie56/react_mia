@@ -16,6 +16,6 @@ class TaskField extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  message: state.message
+  message: state.tasks.message
 });
 export default connect(mapStateToProps)(TaskField);

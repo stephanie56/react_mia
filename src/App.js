@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
 // Components
 import TimeController from './containers/TimeController';
@@ -9,22 +8,12 @@ import TaskField from './containers/TaskField';
 // Styles
 import './stylesheets/app.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <TimeController />
-        <Clock />
-        <TaskField />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <TimeController />
+    <Clock />
+    <TaskField />
+  </div>
+);
 
-const mapStateToProps = (state) => {
-  return {
-
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

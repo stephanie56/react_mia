@@ -8,20 +8,46 @@ import CountdownTimer from '../components/CountdownTimer';
 
 class Clock extends Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      currentDuration: this.props.workDuration,
+      isTimerOn: false
+    }
+    this._startTimer=this._startTimer.bind(this);
+    this._stopTimer=this._stopTimer.bind(this);
+  }
+
+  _startTimer(){
+    console.log('start timer');
+    this.setState({
+      isTimerOn: true
+    });
+  }
+
+  _stopTimer(){
+    console.log('stop timer');
+    this.setState({
+      isTimerOn: false
+    });
+  }
+
   render() {
     return(
       <div className="Clock">
         <div className="clock__activetask">{ this.props.activeTask  }</div>
+
         <CountdownTimer
-          setDuration={ this.props.workDuration }
-          isTimerOn={ this.props.isTimerOn }
+          setDuration={ this.state.currentDuration }
+          isTimerOn={ this.state.isTimerOn }
         />
-      <div className="clock__btn-group">
+
+    <div className="clock__btn-group">
           <button className="clock__btn btn-dark"
-            onClick={this.props.startTimer}
+            onClick={this._startTimer}
           ><i className="fa fa-play-circle"></i>Start</button>
           <button className="clock__btn btn-dark"
-            onClick={this.props.stopTimer}
+            onClick={this._stopTimer}
           ><i className="fa fa-stop-circle"></i>Stop</button>
         </div>
       </div>
@@ -30,10 +56,10 @@ class Clock extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  activeTask: state.activeTask,
+  activeTask: state.tasks.activeTask,
   isTimerOn: state.isTimerOn,
-  workDuration: state.workDuration,
-  breakDuration: state.breakDuration,
+  workDuration: state.durations.workTime,
+  breakDuration: state.durations.breakTime,
 });
 
 const mapDispatchtoProps = (dispatch) => ({
