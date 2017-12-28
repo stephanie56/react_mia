@@ -1,3 +1,10 @@
+export function addTask(todo) {
+  return {
+    type: 'ADD_TASK',
+    payload: todo
+  };
+}
+
 export function onBreakCounterIncrease() {
   return {
     type: 'INCREASE_BREAK_COUNTER',
