@@ -38,7 +38,7 @@ class Clock extends Component {
         <div className="clock__activetask">{ this.props.activeTask  }</div>
 
         <CountdownTimer
-          setDuration={ this.state.currentDuration }
+          setDuration={ this.props.workDuration }
           isTimerOn={ this.state.isTimerOn }
         />
 
