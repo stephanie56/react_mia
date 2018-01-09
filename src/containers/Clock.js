@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { startTimer, stopTimer } from '../action/actionCreator';
+import { startTimer, stopTimer } from '../actions/actionCreator';
 
 
-import CountdownTimer from '../components/CountdownTimer';
+// import CountdownTimer from '../components/CountdownTimer';
 
 class Clock extends Component {
 
@@ -12,7 +12,8 @@ class Clock extends Component {
     super(props);
     this.state={
       currentDuration: this.props.workDuration,
-      isTimerOn: false
+      timeLeft: this.props.workDuration * 60,
+      isTimerOn: true
     }
     this._startTimer=this._startTimer.bind(this);
     this._stopTimer=this._stopTimer.bind(this);
@@ -32,17 +33,39 @@ class Clock extends Component {
     });
   }
 
+  _formatSeconds(totalSeconds){
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${this._addZero(hours)} : ${this._addZero(minutes)} : ${this._addZero(seconds)}`;
+  }
+
+  _addZero(number){
+    return number > 9 ? "" + number : "0" + number;
+  }
+
+  componentDidMount(){
+
+    let timer = setInterval(() => {
+      this.setState({timeLeft: this.state.timeLeft - 1});
+    }, 1000);
+
+    if(this.state.timeLeft <= 0 || !this.state.isTimerOn ) {
+      clearInterval(timer);
+    }
+
+  }
+
   render() {
     return(
       <div className="Clock">
         <div className="clock__activetask">{ this.props.activeTask  }</div>
 
-        <CountdownTimer
-          setDuration={ this.props.workDuration }
-          isTimerOn={ this.state.isTimerOn }
-        />
+        <div className="clock__timer">
+          <span>{ this._formatSeconds(this.state.timeLeft) }</span>
+        </div>
 
-    <div className="clock__btn-group">
+        <div className="clock__btn-group">
           <button className="clock__btn btn-dark"
             onClick={this._startTimer}
           ><i className="fa fa-play-circle"></i>Start</button>

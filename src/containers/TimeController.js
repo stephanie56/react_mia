@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { onBreakCounterIncrease, onBreakCounterDecrease, onWorkCounterIncrease, onWorkCounterDecrease } from '../action/actionCreator';
+import { onBreakCounterIncrease, onBreakCounterDecrease, onWorkCounterIncrease, onWorkCounterDecrease } from '../actions/actionCreator';
 
 import Counter from '../components/Counter';
 
